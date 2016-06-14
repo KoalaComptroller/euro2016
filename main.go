@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xlucas/euro2016/cmd"
-	"github.com/xlucas/euro2016/util"
+	"github.com/KoalaComptroller/euro2016/cmd"
+	"github.com/KoalaComptroller/euro2016/util"
 )
 
 func main() {
