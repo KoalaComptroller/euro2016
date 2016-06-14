@@ -65,6 +65,21 @@ var todayScheduleCmd = &cobra.Command{
 	},
 }
 
+var tomorrowScheduleCmd = &cobra.Command{
+	Use:   "tomorrow",
+	Short: "Print tomorrow's schedule",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		var (
+			now      = time.Now()
+			nextDay  = now.Add(24 * time.Hour)
+			endDay = now.Add(48 * time.Hour)
+			start, _ = time.Parse(time.RFC3339, fmt.Sprintf("%d-%02d-%02dT00:00:00Z", nextDay.Year(), nextDay.Month(), nextDay.Day()))
+			end, _   = time.Parse(time.RFC3339, fmt.Sprintf("%d-%02d-%02dT00:00:00Z", endDay.Year(), endDay.Month(), endDay.Day()))
+		)
+		return showFixtures(start, end, "")
+	},
+}
+
 var statusScheduleCmd = &cobra.Command{
 	Use:   "status [FINISHED|IN_PLAY|TIMED]",
 	Short: "Print schedule for games with a specific status",
