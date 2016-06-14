@@ -32,6 +32,7 @@ func init() {
 	scheduleCmd.AddCommand(fullScheduleCmd)
 	scheduleCmd.AddCommand(statusScheduleCmd)
 	scheduleCmd.AddCommand(todayScheduleCmd)
+	scheduleCmd.AddCommand(tomorrowScheduleCmd)
 }
 
 var scheduleCmd = &cobra.Command{
